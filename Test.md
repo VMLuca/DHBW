@@ -426,3 +426,38 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 ## Fehlerbehandlung
 
 ## Objektorientierung
+
+## async await promise
+
+## JavaScript APIs
+
+## Was sind JavaScript APIs?
+- **API**: Application Programming Interface
+- Schnittstelle, die es ermöglicht, Funktionen eines Programms von außen zu nutzen
+- In JavaScript: Ermöglicht den Zugriff auf Browser- und Webfunktionen
+
+## Arten von JavaScript APIs
+
+### 1. Browser APIs
+- **DOM API**: Manipulation von HTML und CSS
+- **Canvas API**: Zeichnen von Grafiken
+- **Web Storage API**: Lokale Speicherung von Daten
+- **Fetch API**: Netzwerkabrufe und HTTP-Anfragen
+- **Geolocation API**: Standortbestimmung des Geräts
+
+### 2. Third-Party APIs
+- Zugriff auf Dienste und Datenbanken von Drittanbietern
+- Beispiele: Google Maps API, Twitter API, Stripe API
+
+Asynchrone Programmierung am Beispiel der Ferch API 
+
+## asynchron != parallel
+
+## Beispiele
+
+### Fetch API
+```javascript
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
