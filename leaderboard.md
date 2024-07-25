@@ -1,16 +1,21 @@
 ------------------------------------------------
 | LOGO               | Home | Leaderboard | ... |
 ------------------------------------------------
-|                                                |
-|         Willkommen bei der CrossFit            |
-|            Leaderboard App!                    |
-|                                                |
-|        [ Jetzt anmelden ] [ Mehr erfahren ]    |
-|                                                |
+| Konto-Einstellungen                           |
+| Email: [_______]                              |
+| Passwort: [_______]                           |
+| [Passwort ändern]                             |
 ------------------------------------------------
-|                                                |
-| Echtzeit-Leaderboard  | Workout-Statistiken    |
-|                                                |
-| Community-Herausforderungen                    |
-|                                                |
+| Benachrichtigungseinstellungen                |
+| [ ] Email-Benachrichtigungen                  |
+| [ ] Push-Benachrichtigungen                   |
+------------------------------------------------
+| Datenschutzeinstellungen                      |
+| [ ] Profil öffentlich                         |
+| [ ] Trainingsdaten teilen                     |
+------------------------------------------------
+| Verknüpfung mit anderen Fitness-Apps          |
+| [Verbinden mit Strava]                        |
+------------------------------------------------
+| [Änderungen speichern]                        |
 ------------------------------------------------
