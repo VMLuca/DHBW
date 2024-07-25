@@ -154,13 +154,13 @@ console.log("Hallo, Welt!");
 ### Zeichenketten/Strings Literals
 
 ```javascript
-var jsString = `Das ist ein String` // Backticks
-var jsString = 'Das ist ein String' // einfache Anführungs-zeichen
-var jsString = "Das ist ein String" // doppelte Anführungs-zeichen
+var jsString = `Das ist ein String`; // Backticks
+var jsString = "Das ist ein String"; // einfache Anführungs-zeichen
+var jsString = "Das ist ein String"; // doppelte Anführungs-zeichen
 
 // Vorteil von Backticks:
-var jsString = `half of 100 is ${100 / 2}`
-console.log(jsString)
+var jsString = `half of 100 is ${100 / 2}`;
+console.log(jsString);
 // -> half of 100 is 50
 ```
 
@@ -181,6 +181,56 @@ console.log(jsString)
 | \|       | Bitweise ODER                          | a \| b       |
 | ^        | Bitweise Negieren                      | a ^ b        |
 
+## Typen
+
+- Dynamisch typisiert -> bedeutet nicht, das JS eine untypisierte Sprache ist. Vielmehr werden die Typen automatisiert bei der Wertzuweisung vergeben
+
+- Typen:​
+
+  - Number: Zahlen​
+  - String: Zeichenketten​
+  - Boolean: logische Werte​
+  - Object: alles andere
+
+- Spezielle Zustände von Variablen​
+  - undefined bedeutet, dass einer Variable kein Wert zugewiesen wurde.
+  - null ist ein absichtlich zugewiesener Wert, der "kein Wert" oder "leerer Wert" bedeutet
+
+## Automatische Typumwandlung
+
+Wird ein Operator auf einen Wert eines unpassenden Typs angewandt, wandelt JS diesen Wert stillschweigend in den erforderlichen Wert um​ => implizierte Typumwandlung
+
+```javascript
+console.log(8 * null); // -> 0
+```
+
+8 \* null ergibt 0, da null bei arithmetischen Operationen zu 0 konvertiert wird.
+
+```javascript
+console.log("5" - 1); // -> 4
+```
+
+"5" - 1 ergibt 4, weil der String "5" bei Subtraktion zu einer Zahl konvertiert wird.
+
+```javascript
+console.log("5" + 1); // -> 51
+```
+
+"five" kann nicht in eine Zahl umgewandelt werden.
+Der +-Operator führt hier zur Zeichenkettenverknüpfung
+
+```javascript
+console.log("five" * 2); // -> NaN
+```
+
+"five" kann nicht in eine Zahl umgewandelt werden
+
+```javascript
+console.log(false == 0); // -> true
+```
+
+false wird in 0 umgewandelt und ist gleich 0 bei losem Vergleich (==).
+
 ## Short Circuit Evaluation
 
 ### Erklärung
@@ -195,6 +245,6 @@ Short Circuit Evaluation ist eine Programmiertechnik, bei der der Auswertungspro
 const a = false;
 const b = true;
 const result = a && b; // result ist false,
-````
+```
 
 # JavaScript im Browser
