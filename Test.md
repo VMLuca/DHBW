@@ -181,7 +181,7 @@ console.log(jsString);
 | \|       | Bitweise ODER                          | a \| b       |
 | ^        | Bitweise Negieren                      | a ^ b        |
 
-## Typen
+## Elementare Datentypen
 
 - Dynamisch typisiert -> bedeutet nicht, das JS eine untypisierte Sprache ist. Vielmehr werden die Typen automatisiert bei der Wertzuweisung vergeben
 
@@ -231,6 +231,113 @@ console.log(false == 0); // -> true
 
 false wird in 0 umgewandelt und ist gleich 0 bei losem Vergleich (==).
 
+## Object
+
+- Ein Object ist ein Dictionary bestehend aus Name/Werte-Paaren​
+- Ein neues Object wird mit new Object() oder dem Literal {} erzeugt​
+- Auf Inhalte in einem Object kann über die Dot-Notation oder die Index-Notation zugegriffen werden
+
+```html
+<script type="text/javascript">
+  var Person = {};
+  Person.Surname = "Luca"; // Dot-Notation
+  Person["Lastname"] = "Berres"; // Index-Notation
+
+  document.write(`Hallo ${Person["Surname"]} 
+  ${Person.Lastname}!`);
+</script>
+```
+
+## Arrays
+
+- Ein Array wird mit dem Konstruktor new Array() oder dem Literal [ ] angelegt​
+
+- Ein existierendes Array kann über vordefinierte Methoden verändert werden​
+
+  - push(e) //Fügt ein Element am Ende ein und gibt die neue Länge zurück.​
+
+  - pop() // Entfernt das Element am Ende und gibt es zurück.​
+
+  - reverse() // Dreht die Reihenfolge der Elemente im Array um.​
+
+  - shift() // Entfernt das Element am Anfang und gibt es zurück.​
+
+  - sort() // Sortiert das Array und gibt das neue Array zurück.​
+
+  - splice(start, entfernen, neu…) // Entfernt Elemente und fügt neue ein.​
+
+---
+
+- unshift(neu…) // Fügt Elemente am Anfang mein und gibt die neue Länge zurück.
+
+- slice(start, ende) // Extrahiert den Teil eines Arrays von start bis ende.​
+
+- concat(array) // Verbindet Arrays zu einem neuen Array.​
+
+- indexOf(s) // Index der ersten Fundstelle der Zeichen s oder -1, falls nichts gefunden wurde​
+
+- forEach(callback, this) // Ruft eine Funktion callback für jedes Element des Arrays auf. Der Parameter this kann benutzt werden, um der Funktion den Wert für this vorzugeben. ​
+
+- map(callback, this) // Gibt die Elemente zurück, die die Rückruffunktion für jedes Element zurückgibt.
+
+## Map
+
+Die map-Methode in JavaScript ist eine nützliche Array-Methode, die ein neues Array erstellt, indem eine Funktion auf jedes Element des ursprünglichen Arrays angewendet wird. Diese Methode verändert das ursprüngliche Array nicht.
+
+```javascript
+let newArray = array.map(function (element, index, array) {
+  // Rückgabewert für das neue Array
+});
+```
+
+- element: Das aktuelle Element, das verarbeitet wird.
+- index (optional): Der Index des aktuellen Elements.
+- array (optional): Das Array, auf dem map aufgerufen wurde.
+
+---
+
+```javascript
+// Ursprüngliches Array
+let numbers = [1, 2, 3, 4, 5];
+// Erstelle ein neues Array, das die Quadrate der ursprünglichen Zahlen enthält
+let squares = numbers.map(function (number) {
+  return number * number;
+});
+// Ausgabe: [1, 4, 9, 16, 25]
+console.log(squares);
+```
+
+1. Wir haben ein Array numbers mit den Werten [1, 2, 3, 4, 5].
+2. Wir verwenden map, um ein neues Array squares zu erstellen, das die Quadrate der ursprünglichen Zahlen enthält.
+   3.Die an map übergebene Funktion nimmt jedes Element des Arrays numbers, quadriert es und gibt das Ergebnis zurück.
+3. Das resultierende Array squares enthält die Werte [1, 4, 9, 16, 25].
+
+## Spread-Operator
+
+- Spezieller Operator, der zur Expansion von Objekten in Array-Elementen dient​
+
+- Der Spread-Operator … wird dem Array vorangestellt, um die Auflösung des Arrays zu erzwingen
+
+```javascript
+var parts = ["shoulders", "knees"];
+var more_parts = ["head", ...parts, "foot", "toes"];
+
+console.log(more_parts);
+// Output -> ['head', 'shoulders', 'knees', 'foot', 'toes']
+```
+
+## Vergleichsoperatoren
+
+JavaScript enthält folgende logische Vergleichsoperatoren​
+
+- == // Vergleich auf Wert-Gleichheit​
+- != // Vergleich auf Wert-Ungleichheit​
+- === // Vergleich auf Wert- und Typ-Gleichheit​
+- !== // Vergleich auf Wert- und Typ-Ungleichheit​
+- && // Logisches UND​
+- || // Logisches ODER​
+- ! // Logisches Nein (not)
+
 ## Short Circuit Evaluation
 
 ### Erklärung
@@ -242,9 +349,78 @@ Short Circuit Evaluation ist eine Programmiertechnik, bei der der Auswertungspro
 ### Logisches UND (&&)
 
 ```javascript
-const a = false;
-const b = true;
-const result = a && b; // result ist false,
+const a = 4 > 3;
+const b = 4;
+const result = a && b;
 ```
 
-# JavaScript im Browser
+result ist 4, weil a wahr ist und && den zweiten Operanden zurückgibt
+
+---
+
+### Logisches ODER ||
+
+```javascript
+const a = 4 < 3;
+const b = 4;
+const result = a || b;
+```
+
+result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
+
+### Übung
+
+1. ```javascript
+   const result = 7 > 3 || 7;
+   ```
+
+2. ```javascript
+   const i = 6 > 3;
+   const j = 0;
+   const k = 15;
+   const result5 = (i && j) || k;
+   ```
+
+## Falsy und Truthy in JavaScript
+
+### Falsy Werte
+
+- `false`
+- `0` (Null)
+- `''` (Leerer String)
+- `null`
+- `undefined`
+- `NaN` (Not a Number)
+
+### Truthy Werte
+
+- Alles, was nicht falsy ist
+- Beispiele:
+  - `true`
+  - Jede Zahl außer 0 (auch negative Zahlen)
+  - Jeder nicht-leere String (auch "false")
+  - `{}` (Leeres Objekt)
+  - `[]` (Leeres Array)
+
+---
+
+### Anwendung
+
+- In Bedingungen: `if (value) { ... }`
+- Mit logischen Operatoren: `value || defaultValue`
+- Ternärer Operator: `value ? trueResult : falseResult`
+
+### Vorsicht
+
+- Loose equality (`==`) vs. Strict equality (`===`)
+- Explizite Typprüfung für präzise Logik
+
+## Kontrolstrukturen
+
+## Funktionen
+
+## ES Modules
+
+## Fehlerbehandlung
+
+## Objektorientierung

@@ -1,5 +1,7 @@
-let x = 1;
-const y= x++
-console.log(y);
+// let x = 1;
+// const y= x++
+// console.log(y);
 
-console.log(x/0);
+// console.log(x/0);
+
+console.log(false && 4); // function);
