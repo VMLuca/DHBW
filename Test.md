@@ -517,3 +517,6 @@ function performHeavyComputation() {
   // Rechenintensive Aufgabe
 }
 ```
+
+interessante Videos:
+https://youtube.com/@theavocoder?si=FRZh-LxMq_4QQWvE
