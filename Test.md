@@ -449,8 +449,6 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 
 ## Asynchrone Programmierung am Beispiel der Ferch API 
 
-
-# Was ist Asynchrone Programmierung?
 - Ausführung von Code, der auf ein Ereignis oder eine Ressource wartet, ohne den Hauptthread zu blockieren
 - Netzwerkabfragen, Timer, I/O Operationen
 - läuft auf dem Hauptthread
