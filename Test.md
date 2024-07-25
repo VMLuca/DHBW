@@ -417,6 +417,8 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 
 ## Kontrolstrukturen
 
+## Ternar Operator
+
 ## Funktionen
 
 ## ES Modules
