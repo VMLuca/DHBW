@@ -427,8 +427,6 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 
 ## Objektorientierung
 
-## async await promise
-
 ## JavaScript APIs
 
 ## Was sind JavaScript APIs?
@@ -449,15 +447,49 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 - Zugriff auf Dienste und Datenbanken von Drittanbietern
 - Beispiele: Google Maps API, Twitter API, Stripe API
 
-Asynchrone Programmierung am Beispiel der Ferch API 
+## Asynchrone Programmierung am Beispiel der Ferch API 
 
-## asynchron != parallel
 
-## Beispiele
+# Was ist Asynchrone Programmierung?
+- Ausführung von Code unabhängig von der Hauptprogrammausführung
+- Verhindert das Blockieren des Hauptthreads
+- Nutzung von **Callbacks**, **Promises** und **Async/Await**
 
-### Fetch API
+## Fetch API Beispiel
+- Moderne Methode zum Abrufen von Ressourcen über das Netzwerk
+- Rückgabe eines **Promise**-Objekts
+
+## Nutzung der Fetch API mit Promises
 ```javascript
 fetch('https://api.example.com/data')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.error('Error:', error));
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Netzwerkantwort war nicht ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log('Daten:', data);
+  })
+  .catch(error => {
+    console.error('Es gab ein Problem mit dem Fetch-Vorgang:', error);
+  });
+```
+
+## Syntactic Sugar durch async await
+```javascript
+async function fetchData() {
+  try {
+    const response = await fetch('https://api.example.com/data');
+    if (!response.ok) {
+      throw new Error('Netzwerkantwort war nicht ok');
+    }
+    const data = await response.json();
+    console.log('Daten:', data);
+  } catch (error) {
+    console.error('Es gab ein Problem mit dem Fetch-Vorgang:', error);
+  }
+}
+
+fetchData();
+```
