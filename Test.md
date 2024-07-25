@@ -451,8 +451,9 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 
 
 # Was ist Asynchrone Programmierung?
-- Ausführung von Code unabhängig von der Hauptprogrammausführung
-- Verhindert das Blockieren des Hauptthreads
+- Ausführung von Code, der auf ein Ereignis oder eine Ressource wartet, ohne den Hauptthread zu blockieren
+- Netzwerkabfragen, Timer, I/O Operationen
+- läuft auf dem Hauptthread
 - Nutzung von **Callbacks**, **Promises** und **Async/Await**
 
 ## Fetch API Beispiel
@@ -492,4 +493,29 @@ async function fetchData() {
 }
 
 fetchData();
+```
+
+## Parallele Programmierung
+
+- Gleichzeitige Ausführung: Mehrere Operationen laufen gleichzeitig auf verschiedenen Kernen
+- Rechenintensive Aufgaben, Bildverarbeitung, wissenschaftliche Berechnungen
+
+```javascript
+// main.js
+const worker = new Worker('worker.js');
+worker.postMessage('Start');
+
+worker.onmessage = function(event) {
+  console.log('Ergebnis:', event.data);
+};
+
+// worker.js
+onmessage = function(event) {
+  const result = performHeavyComputation();
+  postMessage(result);
+};
+
+function performHeavyComputation() {
+  // Rechenintensive Aufgabe
+}
 ```
