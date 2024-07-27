@@ -18,6 +18,24 @@ toc_depth: 4
 
 ## Wer steht hinter JavaScript
 
+## ECMAScript Versionsgeschichte
+
+### Frühe Versionen (Zahlenbasiert)
+- ECMAScript 1 bis 3 
+- ECMAScript 4
+- ECMAScript 5 (ES5)
+
+### Moderne Versionen (Jahresbasiert)
+- ECMAScript 6 (ES6): Auch bekannt als ECMAScript 2015 (ES2015)
+- ECMAScript 2016 (ES2016)
+- ECMAScript 2017 (ES2017)
+- ECMAScript 2018 (ES2018)
+- ECMAScript 2019 (ES2019)
+- ECMAScript 2020 (ES2020)
+
+## Fazit
+Ja, die älteren Versionen von ECMAScript wurden durch Zahlen benannt (z. B. ES5 und ES6). Seit 2016 werden die Versionen jedoch nach dem Jahr ihrer Veröffentlichung benannt (z. B. ES2016, ES2017 usw.), was die kontinuierliche Weiterentwicklung und Verbesserung der Sprache widerspiegelt.
+
 ECMA International (früher: European Computer Manufacturers Association)
 
 ![ECMA](img/ecmascript.png)
