@@ -423,6 +423,12 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 
 ## ES Modules
 
+## Spread Operator 
+
+## Rest Operator 
+
+## Destructuring
+
 ## Fehlerbehandlung
 
 ## Objektorientierung
