@@ -451,7 +451,7 @@ if (1 + 1 == 2) console.log("It's true");
 // -> It's true
 ```
 
-## switch – else – default:
+## switch – else – default:{.allowframebreaks}
 
 - Der `switch` Befehl dient zur Fallunterscheidung
 
@@ -565,9 +565,175 @@ for (var i = 0; ; i++) {
 // -> 2
 ```
 
-## Funktionen
+## Funktionen{.allowframebreaks}
 
-## ES Modules
+### Was ist eine Funktion?
+
+- Eine Funktion ist ein wiederverwendbarer Codeblock, der eine bestimmte Aufgabe ausführt.
+- Funktionen können Parameter akzeptieren und Werte zurückgeben.
+- Funktionen helfen, den Code modular und lesbarer zu gestalten.
+
+### Funktionsdeklaration
+
+```javascript
+function greet(name) {
+  return `Hallo, ${name}!`;
+}
+```
+
+- `greet` ist der Name der Funktion.
+- `name` ist ein Parameter.
+- `return` gibt den Wert an den Aufrufer zurück.
+
+### Funktionsaufruf
+
+```javascript
+let message = greet("Max");
+console.log(message); // Output: Hallo, Max!
+```
+
+- Der Funktionsname wird mit den Argumenten aufgerufen.
+- Das Ergebnis wird in einer Variable gespeichert oder direkt verwendet.
+
+### Anonyme Funktionen und Arrow Functions
+
+#### Anonyme Funktion:
+
+```javascript
+let greet = function (name) {
+  return `Hallo, ${name}!`;
+};
+```
+
+- Funktionen ohne Namen, häufig als Callback-Funktionen verwendet
+
+#### Arrow Function:
+
+```javascript
+let greet = (name) => `Hallo, ${name}!`;
+```
+
+- Kürzere Syntax für anonyme Funktionen, eingeführt in ES6
+
+<!-- ### Exkurs Callback
+
+Callback = Rückruf
+
+```javascript
+function askName(callback) {
+  // Simuliert die Eingabe des Benutzers
+  const name = prompt("Bitte gib deinen Namen ein:");
+  // Ruft das Callback auf und übergibt den Namen
+  callback(name);
+}
+
+// Funktionsparameter von askName ist eine
+// anonymer Pfeilfunktion
+askName((name) => {
+  console.log(`Hallo, ${name}!`);
+});
+``` -->
+
+### Funktionen mit mehreren Parametern
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+let sum = add(5, 3);
+console.log(sum); // Output: 8
+```
+
+- Funktionen können mehrere Parameter akzeptieren.
+- Argumente werden in der Reihenfolge der Parameter übergeben.
+
+### Standardwerte für Parameter
+
+```javascript
+function greet(name = "Welt") {
+  return `Hallo, ${name}!`;
+}
+
+console.log(greet()); // Output: Hallo, Welt!
+```
+
+- Parameter können Standardwerte haben, die verwendet werden, wenn kein Argument übergeben wird.
+
+### Funktionen als Argumente
+
+```javascript
+function performOperation(a, b, operation) {
+  return operation(a, b);
+}
+
+let result = performOperation(5, 3, add);
+console.log(result); // Output: 8
+```
+
+- Funktionen können als Argumente an andere Funktionen übergeben werden.
+
+### Funktionen, die andere Funktionen zurückgeben
+
+```javascript
+function multiplier(factor) {
+  return (x) => x * factor;
+}
+
+let doubler = multiplier(2);
+console.log(doubler(5)); // Output: 10
+```
+
+- Funktionen können andere Funktionen zurückgeben, um benutzerdefinierte Logik zu erstellen.
+
+## ES Modules{.allowframebreaks}
+
+## Was sind ES Modules?
+
+- **Definition:** ES Modules (ECMAScript Modules) sind der standardisierte Weg, um Module in JavaScript zu schreiben und zu verwenden.
+- **Zweck:** Ermöglichen das Aufteilen von Code in kleinere, wiederverwendbare Teile (Module), die einfach importiert und exportiert werden können.
+
+## Modul-Export
+
+- **Syntax:** Um einen Wert oder eine Funktion aus einem Modul verfügbar zu machen, wird `export` verwendet.
+
+### Einzelner Export:
+
+```javascript
+// datei: math.js
+export function add(a, b) {
+  return a + b;
+}
+```
+
+### Standard Export
+
+```javascript
+// datei: math.js
+export default function subtract(a, b) {
+  return a - b;
+}
+```
+
+## Modul Import
+
+### Named IMport
+
+```javascript
+// datei: main.js
+import { add } from "./math.js";
+
+console.log(add(2, 3)); // Ausgabe: 5
+```
+
+### Default import
+
+```javascript
+// datei: main.js
+import subtract from "./math.js";
+
+console.log(subtract(5, 2)); // Ausgabe: 3
+```
 
 ## Fehlerbehandlung
 
@@ -619,4 +785,4 @@ finally {
 
 ## Objektorientierung
 
-![Objektorientierung](/img/ObjectOrientation.png)
+![Objektorientierung](/img/ObjectOrientation.png){ height=100% }
