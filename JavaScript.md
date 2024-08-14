@@ -415,7 +415,155 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 - Loose equality (`==`) vs. Strict equality (`===`)
 - Explizite Typprüfung für präzise Logik
 
-## Kontrolstrukturen
+# Kontrolstrukturen
+
+## If – else:
+
+- If-Ausdruck vom Typ Boolean
+- Der `else`-Zweig ist optional
+
+```javascript
+var test = true;
+
+if (test) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+// Output -> True
+```
+
+---
+
+```javascript
+// Wahrheitsgehalt ausgewertet durch Vergleichsoperator
+var number = Number(prompt("Pick a number"));
+if (number < 10) {
+  console.log("under 10");
+} else if (number < 100) {
+  console.log("under 100");
+} else {
+  console.log("larger than 100");
+}
+
+// Einzeiliges If, bei nur einer Anweisung
+if (1 + 1 == 2) console.log("It's true");
+// -> It's true
+```
+
+## switch – else – default:
+
+- Der `switch` Befehl dient zur Fallunterscheidung
+
+```javascript
+switch (expression) {
+    case value1:
+        // Anweisungen werden ausgeführt,
+        // falls expression mit value1 übereinstimmt
+        [break;]
+    case value2:
+        // Anweisungen werden ausgeführt,
+        // falls expression mit value2 übereinstimmt
+        [break;]
+    ...
+    case valueN:
+        // Anweisungen werden ausgeführt,
+        // falls expression mit valueN übereinstimmt
+        [break;]
+    default:
+        // Anweisungen werden ausgeführt,
+        // falls keine der case-Klauseln mit expression übereinstimmt
+        [break;]
+}
+```
+
+## Schleifen
+
+### while
+
+**Syntax:**
+
+```javascript
+while (condition) {
+  // code block to be executed
+}
+```
+
+**Beispiel:**
+
+```javascript
+while (i < 10) {
+  text += "The number is " + i;
+  i++;
+}
+```
+
+---
+
+### do
+
+**Syntax:**
+
+```javascript
+do {
+  // code block to be executed
+} while (condition);
+```
+
+**Beispiel:**
+
+```javascript
+var text = "";
+var i = 0;
+do {
+  text += "The number is " + i;
+  i++;
+} while (i < 5);
+```
+
+---
+
+### for
+
+**Syntax:**
+
+```javascript
+for (statement 1; statement 2; statement 3) {
+    // code block to be executed
+}
+```
+
+**Anweisung 1** wird (einmal) vor der Ausführung des Codeblocks ausgeführt.
+
+**Anweisung 2** definiert die Bedingung für die Ausführung des Codeblocks.
+
+**Anweisung 3** wird (jedes Mal) nach der Ausführung des Codeblocks ausgeführt.
+
+**Beispiel:**
+
+```javascript
+for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+```
+
+---
+
+### Vorzeitiger Schleifenabbruch
+
+Eine Schleife kann durch `break` auch vorzeitig beendet werden.
+
+```javascript
+for (var i = 0; ; i++) {
+  if (i > 2) {
+    break;
+  }
+  console.log(i);
+}
+// -> 0
+// -> 1
+// -> 2
+```
 
 ## Funktionen
 
@@ -423,4 +571,52 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 
 ## Fehlerbehandlung
 
+Syntax:
+
+```javascript
+try {
+    tryCode - Block of code to try
+}
+catch(err) {
+    catchCode - Block of code to handle errors
+}
+finally {
+    finallyCode - Block of code to be executed regardless of the try/catch result
+}
+```
+
+---
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>Please input a number between 5 and 10:</p>
+
+    <input id="demo" type="text" />
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="message"></p>
+
+    <script>
+      function myFunction() {
+        var message, x;
+        message = document.getElementById("message");
+        message.innerHTML = "";
+        x = document.getElementById("demo").value;
+        try {
+          if (x == "") throw "is Empty";
+          if (isNaN(x)) throw "not a number";
+          if (x > 10) throw "too high";
+          if (x < 5) throw "too low";
+        } catch (err) {
+          message.innerHTML = "Input " + err;
+        }
+      }
+    </script>
+  </body>
+</html>
+```
+
 ## Objektorientierung
+
+![Objektorientierung](/img/ObjectOrientation.png)

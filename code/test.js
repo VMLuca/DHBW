@@ -4,4 +4,6 @@
 
 // console.log(x/0);
 
-console.log(false && 4); // function);
+// console.log(false && 4); // function);
+
+

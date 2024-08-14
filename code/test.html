@@ -1,8 +1,17 @@
 <script type="text/javascript">
-    var Person = {};
-    Person.Surname = "Sven"; // Dot-Notation
-    Person["Lastname"] = "Langenecker"; // Index-Notation
+  var Person = {};
+  Person.Surname = "Sven"; // Dot-Notation
+  Person["Lastname"] = "Langenecker"; // Index-Notation
 
-    document.write(`Hallo ${Person["Surname"]} ${Person.Lastname}!`);
+  document.write(`Hallo ${Person["Surname"]} ${Person.Lastname}!`);
 
+  var number = Number(prompt("Pick a number"));
+
+  if (number < 10) {
+    console.log("under 10");
+  } else if (number < 100) {
+    console.log("under 100");
+  } else {
+    console.log("larger than 100");
+  }
 </script>
