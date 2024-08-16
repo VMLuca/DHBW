@@ -12,7 +12,7 @@ toc_depth: 4
 ## Allgemeines
 
 - entwickelt 1995 von Brendan Eich um Webseiten mit Interaktion auszustatten
-- Eine der beliebtesteten Programmiersprachen
+- Eine der beliebtesten Programmiersprachen
 - Trotz Namensähnlichkeit nicht mit JAVA verwandt, aber beide orientieren sich von der Syntax an C
   ![Test](img/stackoverflow.png){height=150%}
 
