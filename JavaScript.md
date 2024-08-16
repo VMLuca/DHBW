@@ -710,16 +710,15 @@ console.log(doubler(5)); // Output: 10
 
 ## ES Modules{.allowframebreaks}
 
-## Was sind ES Modules?
+### Was sind ES Modules?
 
 - **Definition:** ES Modules (ECMAScript Modules) sind der standardisierte Weg, um Module in JavaScript zu schreiben und zu verwenden.
 - **Zweck:** Ermöglichen das Aufteilen von Code in kleinere, wiederverwendbare Teile (Module), die einfach importiert und exportiert werden können.
+- Weitere Techniken wie z.B. CommonJS, diese sind aber veraltet
 
-## Modul-Export
+### Modul-Export
 
-- **Syntax:** Um einen Wert oder eine Funktion aus einem Modul verfügbar zu machen, wird `export` verwendet.
-
-### Einzelner Export:
+#### Named Export:
 
 ```javascript
 // datei: math.js
@@ -728,7 +727,9 @@ export function add(a, b) {
 }
 ```
 
-### Standard Export
+Mehrere Exporte pro Datei möglich
+
+#### Default Export
 
 ```javascript
 // datei: math.js
@@ -737,9 +738,13 @@ export default function subtract(a, b) {
 }
 ```
 
-## Modul Import
+Ein Export pro Datei möglich
 
-### Named IMport
+---
+
+### Modul Import
+
+#### Named Import
 
 ```javascript
 // datei: main.js
@@ -748,7 +753,7 @@ import { add } from "./math.js";
 console.log(add(2, 3)); // Ausgabe: 5
 ```
 
-### Default import
+#### Default import
 
 ```javascript
 // datei: main.js
@@ -757,7 +762,7 @@ import subtract from "./math.js";
 console.log(subtract(5, 2)); // Ausgabe: 3
 ```
 
-## Fehlerbehandlung
+## Fehlerbehandlung{.fragile}
 
 Syntax:
 
@@ -769,42 +774,27 @@ catch(err) {
     catchCode - Block of code to handle errors
 }
 finally {
-    finallyCode - Block of code to be executed regardless of the try/catch result
+    finallyCode - Block of code to be executed regardless
+    of the try/catch result
 }
 ```
 
 ---
 
-```html
-<!DOCTYPE html>
-<html>
-  <body>
-    <p>Please input a number between 5 and 10:</p>
+## Beispiel {.squeeze}
 
-    <input id="demo" type="text" />
-    <button type="button" onclick="myFunction()">Test Input</button>
-    <p id="message"></p>
-
-    <script>
-      function myFunction() {
-        var message, x;
-        message = document.getElementById("message");
-        message.innerHTML = "";
-        x = document.getElementById("demo").value;
-        try {
-          if (x == "") throw "is Empty";
-          if (isNaN(x)) throw "not a number";
-          if (x > 10) throw "too high";
-          if (x < 5) throw "too low";
-        } catch (err) {
-          message.innerHTML = "Input " + err;
-        }
-      }
-    </script>
-  </body>
-</html>
+```javascript
+try {
+  let result = 10 / 0;
+  console.log(result);
+} catch (error) {
+  console.error("Fehler:", error.message);
+} finally {
+  console.log("Fertig!");
+}
 ```
 
 ## Objektorientierung
 
-![Objektorientierung](/img/ObjectOrientation.png){ height=100% }
+![Objektorientierung](./img/ObjectOrientation.png){height=150%}
+`````
