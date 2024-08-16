@@ -7,7 +7,7 @@ toc: true
 toc_depth: 4
 ---
 
-# Allgemines zu JavaScript
+# Einleitung
 
 ## Allgemeines
 
@@ -32,11 +32,9 @@ ECMA International (früher: European Computer Manufacturers Association)
 - Desktop Applikationen -> Electron
 - Mobile Applikationen -> React Native oder Ionic
 
-# Syntax
 
-# Einbindung JavaScript
 
-## Eingebettetes im HTML
+## Einbindung JavaScript - Eingebettetes im HTML
 
 ```html
 <!DOCTYPE html>
@@ -56,7 +54,7 @@ ECMA International (früher: European Computer Manufacturers Association)
 
 ---
 
-## Extern referenziert im HTML
+## Einbindung JavaScript - Extern referenziert im HTML
 
 1. Erstelle eine Datei namens script.js mit folgendem Inhalt:
 
@@ -82,7 +80,7 @@ alert("Hallo, Welt!");
 
 ---
 
-## Konsole
+##  Einbindung JavaScript - Konsole
 
 1. Öffne die Entwicklertools in deinem Browser: In Chrome: Rechtsklick -> "Untersuchen" -> Tab "Konsole" oder <kbd>F12</kbd>
 
@@ -94,7 +92,7 @@ console.log("Hallo, Welt!");
 
 ---
 
-## Standalone
+##  Einbindung JavaScript - Standalone
 
 1. Erstelle eine Datei mit folgendem Inhalt und speicher sie als Test.js ab
 
@@ -105,9 +103,7 @@ console.log("Hallo, Welt!");
 2. Öffne sie mit einem Browser
 3. Öffne die Konsole wie zuvor gezeigt
 
----
-
-# Allgemine Programmierkonzepte
+# Datentypen
 
 ## Variables
 
@@ -177,14 +173,14 @@ let x = 5; // Variable x wird initialisiert
 
 - Verwenden Sie `/*` und `*/` für längere Erklärungen.
 
-````javascript
+```javascript
 /*
 Dies ist ein mehrzeiliger Kommentar.
 Es kann auf mehreren Zeilen geschrieben werden.
 Nützlich für ausführliche Beschreibungen.
 */
 let y = 10;
-````
+```
 
 ## Operatoren
 
@@ -253,6 +249,8 @@ console.log(false == 0); // -> true
 
 false wird in 0 umgewandelt und ist gleich 0 bei losem Vergleich (==).
 
+# Arbeiten mit Datenstrukturen
+
 ## Object
 
 - Ein Object ist ein Dictionary bestehend aus Name/Werte-Paaren​
@@ -265,7 +263,7 @@ false wird in 0 umgewandelt und ist gleich 0 bei losem Vergleich (==).
   Person.Surname = "Luca"; // Dot-Notation
   Person["Lastname"] = "Berres"; // Index-Notation
 
-  document.write(`Hallo ${Person["Surname"]} 
+  document.write(`Hallo ${Person["Surname"]}
   ${Person.Lastname}!`);
 </script>
 ```
@@ -347,6 +345,8 @@ var more_parts = ["head", ...parts, "foot", "toes"];
 console.log(more_parts);
 // Output -> ['head', 'shoulders', 'knees', 'foot', 'toes']
 ```
+
+# Logik und Kontrollfluss
 
 ## Vergleichsoperatoren
 
@@ -437,7 +437,7 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
 - Loose equality (`==`) vs. Strict equality (`===`)
 - Explizite Typprüfung für präzise Logik
 
-# Kontrolstrukturen
+# Kontrollstrukturen
 
 ## If – else:
 
@@ -586,6 +586,8 @@ for (var i = 0; ; i++) {
 // -> 1
 // -> 2
 ```
+
+# Modularisierung
 
 ## Funktionen{.allowframebreaks}
 
@@ -762,6 +764,8 @@ import subtract from "./math.js";
 console.log(subtract(5, 2)); // Ausgabe: 3
 ```
 
+# Fehlerbehandlung
+
 ## Fehlerbehandlung{.fragile}
 
 Syntax:
@@ -794,7 +798,17 @@ try {
 }
 ```
 
+# Ausblick und Fazit
+
 ## Objektorientierung
 
 ![Objektorientierung](./img/ObjectOrientation.png){height=150%}
-`````
+
+## Fazit
+
+![](./img/theend.png){ width=50% }
+
+- Diese Präsentation bot eine erste Einführung in die Grundlagen von JavaScript.
+- Der Fokus lag auf einem Überblick ohne Anspruch auf Vollständigkeit.
+- Es gibt viele weiterführende Details, Themen und Konzepte, die hier nicht behandelt wurden.
+- Dennoch bietet dieses Fundament eine solide Basis für das Verständnis von React und allgemeiner Frontend-Entwicklung.
