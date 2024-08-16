@@ -1,0 +1,2 @@
+Aufgabe:
+Erstelle ein JavaScript-Objekt, das die Daten einer Person (Name, Alter, Beruf) enthält. Speichere diese Personendaten in einem Array, das mehrere Personen enthält. Verwende die map() Methode, um eine Liste der Berufe aller Personen zu erstellen. Anschließend fügst du mit dem Spread-Operator eine neue Person zu diesem Array hinzu und gibst das aktualisierte Array in der Konsole aus. Führe die Datei mit serverseitigem JavaScript aus
