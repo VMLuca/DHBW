@@ -109,8 +109,6 @@ console.log("Hallo, Welt!");
 
 # Allgemine Programmierkonzepte
 
-## Kommenatere
-
 ## Variables
 
 ### Übersicht
@@ -163,6 +161,30 @@ var jsString = `half of 100 is ${100 / 2}`;
 console.log(jsString);
 // -> half of 100 is 50
 ```
+
+## Kommentare
+
+### Einzeilige Kommentare
+
+- Verwenden Sie `//` gefolgt vom Kommentartext.
+
+```javascript
+// Dies ist ein einzeiliger Kommentar
+let x = 5; // Variable x wird initialisiert
+```
+
+### Mehrzeilige Kommentare
+
+- Verwenden Sie `/*` und `*/` für längere Erklärungen.
+
+````javascript
+/*
+Dies ist ein mehrzeiliger Kommentar.
+Es kann auf mehreren Zeilen geschrieben werden.
+Nützlich für ausführliche Beschreibungen.
+*/
+let y = 10;
+````
 
 ## Operatoren
 
