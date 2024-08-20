@@ -32,8 +32,6 @@ ECMA International (früher: European Computer Manufacturers Association)
 - Desktop Applikationen -> Electron
 - Mobile Applikationen -> React Native oder Ionic
 
-
-
 ## Einbindung JavaScript - Eingebettetes im HTML
 
 ```html
@@ -80,7 +78,7 @@ alert("Hallo, Welt!");
 
 ---
 
-##  Einbindung JavaScript - Konsole
+## Einbindung JavaScript - Konsole
 
 1. Öffne die Entwicklertools in deinem Browser: In Chrome: Rechtsklick -> "Untersuchen" -> Tab "Konsole" oder <kbd>F12</kbd>
 
@@ -92,7 +90,7 @@ console.log("Hallo, Welt!");
 
 ---
 
-##  Einbindung JavaScript - Standalone
+## Einbindung JavaScript - Standalone
 
 1. Erstelle eine Datei mit folgendem Inhalt und speicher sie als Test.js ab
 
@@ -796,6 +794,71 @@ try {
 } finally {
   console.log("Fertig!");
 }
+```
+
+# Asnychrone Programmierung
+
+## Einführung
+
+- Warten auf langwierige Aktionen, ohne dass das Programm einfriert
+
+- Asynchron => mehrere Aktionen können parallel geschehen. Wenn eine Aktion beginnt, kann das Programm mit etwas anderem weitermachen. Sobald die Aktion abgeschlossen ist, wird das Programm darüber informiert und kann auf das Ergebnis zugreifen.
+
+- Vgl. Koch in Küche
+
+- Verwendung bei Kommunikation über ein Netzwerk oder beim Datenzugriff von der Festplatte
+
+- In JS über Callbacks, Promises oder Async-Funktionen umsetzbar
+
+## Callbacks
+
+```javascript
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Callback</h2>
+<p>Wait 3 seconds for this page to change.</p>
+<h1 id="demo"></h1>
+
+<script>
+setTimeout(myFunction, 3000);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = "This is a callback function!!";
+}
+
+console.log("Test") // Dieser log erscheint vor der Textausgabe in h1
+</script>
+
+</body>
+</html>
+```
+
+## Async Await
+
+- Der JavaScript Code ist bzgl. der Abarbeitung mit der Zeile `fs.readFile()` auf das Dateisystem angewiesen
+- Das Dateisytem braucht eine gewisse Zeit um die Datei bereitzustellen
+- Deshalb "merkt" sich die Ausführungsengine die Stelle und springt aus der Funktion raus in die weitere Abarbeitung
+- Wenn das Dateisystem fertig ist, springt die Abarbeitung wieder an die "gemerkte" Stelle und das Ergebnis kann prozessiert werden
+
+```javascript
+const fs = require("fs/promises");
+
+async function readFile() {
+  try {
+    const filePath = "./example.txt";
+
+    const content = await fs.readFile(filePath, "utf-8");
+
+    console.log("Inhalt der Datei:", content);
+  } catch (error) {
+    console.error("Fehler beim Lesen der Datei:", error);
+  }
+}
+
+readFile();
+console.log("Nächster Schritt");
 ```
 
 # Ausblick und Fazit
