@@ -32,7 +32,7 @@ ECMA International (früher: European Computer Manufacturers Association)
 - Desktop Applikationen -> Electron
 - Mobile Applikationen -> React Native oder Ionic
 
-## Einbindung JavaScript - Eingebettetes im HTML
+## Einbindung JavaScript - Eingebettetet im HTML
 
 ```html
 <!DOCTYPE html>
@@ -100,6 +100,16 @@ console.log("Hallo, Welt!");
 
 2. Öffne sie mit einem Browser
 3. Öffne die Konsole wie zuvor gezeigt
+
+## Einbindung JavaScript - Serverseitiges JavaScript
+
+1. Erstelle eine Datei mit folgendem Inhalt und speicher sie als Test.js ab
+
+```javascript
+console.log("Hallo, Welt!");
+```
+
+2. Führe die Datei in der Kommandozeile mit dem Befehl `node Test.js` aus
 
 # Datentypen
 
@@ -247,6 +257,15 @@ console.log(false == 0); // -> true
 
 false wird in 0 umgewandelt und ist gleich 0 bei losem Vergleich (==).
 
+## Aufgabe
+
+Aufgabe:
+Erstelle eine HTML-Datei, die eine externe JavaScript-Datei einbindet. Das JavaScript-Skript soll folgende Aufgaben ausführen:
+
+1. Schreibe eine Nachricht "Hallo, Welt!" in die Konsole.
+2. Definiere zwei Variablen, a und b, mit den Werten 10 und 20. Berechne die Summe dieser beiden Variablen und gib das Ergebnis in der Konsole aus.
+3. Erstelle eine Zeichenkette, die den Text "Das Ergebnis von 10 + 20 ist: " enthält, und füge das Ergebnis der Berechnung in diese Zeichenkette ein. Gib diese Zeichenkette ebenfalls in der Konsole aus.
+
 # Arbeiten mit Datenstrukturen
 
 ## Object
@@ -343,6 +362,10 @@ var more_parts = ["head", ...parts, "foot", "toes"];
 console.log(more_parts);
 // Output -> ['head', 'shoulders', 'knees', 'foot', 'toes']
 ```
+
+## Aufgabe
+
+Erstelle 3 verschiedene JavaScript-Objekte, die jeweils Daten einer Person (Name, Alter, Beruf) enthalten. Speichere diese Personendaten in einem Array, das mehrere Personen enthält. Verwende die map() Methode, um eine Liste der Berufe aller Personen zu erstellen. Anschließend fügst du mit dem Spread-Operator eine neue Person zu diesem Array hinzu und gibst das aktualisierte Array in der Konsole aus. Führe die Datei mit serverseitigem JavaScript aus.
 
 # Logik und Kontrollfluss
 
