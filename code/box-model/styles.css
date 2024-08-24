@@ -10,4 +10,6 @@
     width: 200px;
     background-color: red;
     height: 250px;
+    /*  shorthand for border-width, border-style, and border-color */
+    border: 2px dotted black;
 }
