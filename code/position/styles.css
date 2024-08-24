@@ -1,0 +1,29 @@
+body {
+    height: 200vh;
+}
+
+
+.parent {
+    padding: 20px;
+    background: purple;
+    position: relative;
+}
+
+.one {
+    background-color: hsl(158, 78%, 42%);
+    height: 100px;
+}
+
+.two {
+    background-color: hsl(21, 100%, 60%);
+    height: 100px;
+    position: absolute;
+    top: 20px;
+
+}
+
+.three {
+    background-color: hsl(200, 100%, 50%);
+    height: 100px;
+
+}

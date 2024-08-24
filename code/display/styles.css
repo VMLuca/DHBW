@@ -1,0 +1,26 @@
+.parent {
+    padding: 20px;
+    background: purple;
+}
+
+.one {
+    background-color: hsl(158, 78%, 42%);
+    height: 100px;
+}
+
+.two {
+    background-color: hsl(21, 100%, 60%);
+    height: 100px;
+}
+
+.three {
+    background-color: hsl(200, 100%, 50%);
+    height: 100px;
+    display: inline-block;
+
+}
+
+.four {
+    background-color: hsl(0, 100%, 50%);
+    height: 100px;
+}
