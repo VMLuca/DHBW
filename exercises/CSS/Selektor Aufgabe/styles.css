@@ -1,0 +1,27 @@
+/* styles.css */
+
+/* Element Selektor */
+p {
+    color: blue;
+}
+
+/* ID Selektor */
+#main-title {
+    background-color: orange;
+    color: green;
+}
+
+/* Klassen Selektor */
+.link {
+    color: red;
+}
+
+/* Pseudoklasse */
+a:hover {
+    color: blue;
+}
+
+/* Pseudoelement */
+p::before {
+    content: "Hinweis: ";
+}
