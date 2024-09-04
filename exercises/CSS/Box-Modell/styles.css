@@ -4,21 +4,17 @@ body {
   color: #333;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 20px;
-}
-
-.navigation {
-  display: flex;
-  gap: 20px;
-  list-style-type: none;
-}
-
 .container {
   max-width: 800px;
   margin: auto;
   padding: 20px;
   background: white;
 }
+
+.instructions li {
+  border: 1px solid #8bc34a;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
