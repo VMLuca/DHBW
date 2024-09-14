@@ -40,6 +40,8 @@ ECMA International (früher: European Computer Manufacturers Association)
 
 **Shell-Scripting und Automatisierung:** Tools wie Node.js können für Skripte und Automatisierungsaufgaben auf Betriebssystemebene verwendet werden.
 
+## Ausführung JavaScript - Eingebettetet im HTML
+
 ```html
 <!DOCTYPE html>
 <html lang="de">
@@ -58,7 +60,7 @@ ECMA International (früher: European Computer Manufacturers Association)
 
 ---
 
-## Einbindung JavaScript - Extern referenziert im HTML
+## Ausführung JavaScript - Extern referenziert im HTML {.allowframebreaks}
 
 1. Erstelle eine Datei namens script.js mit folgendem Inhalt:
 
@@ -71,10 +73,6 @@ alert("Hallo, Welt!");
 ```html
 <!DOCTYPE html>
 <html lang="de">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Meine Webseite</title>
-  </head>
   <body>
     <h1>Willkommen auf meiner Webseite</h1>
     <script src="script.js"></script>
@@ -82,44 +80,46 @@ alert("Hallo, Welt!");
 </html>
 ```
 
----
-
 ### Platzierung
 
-Im `<head>`-Bereich
+**_Im `<head>`-Bereich_**
 
 Du kannst das Script im `<head>`-Tag einbinden. Dies bedeutet, dass das Script ausgeführt wird, sobald der HTML-Header geladen ist, **bevor** der restliche Inhalt der Seite geladen wird.
 
-```
+```html
 <head>
-   <script src="script.js"></script>
+  <script src="script.js"></script>
 </head>
 ```
 
 Hinweis: Wenn das Script direkt im `<head>`-Tag geladen wird, kann es zu Problemen führen, da das DOM noch nicht vollständig geladen ist. Um dieses Problem zu vermeiden, kannst du das defer-Attribut verwenden:
 
-`<script src="script.js" defer></script>`
+```html
+<script src="script.js" defer></script>
+```
 
 ---
 
-Am Ende des `<body>`-Tags
+**_Am Ende des `<body>`-Tags_**
 
 Eine gängige Praxis ist es, JavaScript kurz vor dem schließenden `</body>`-Tag einzubinden. Auf diese Weise wird sichergestellt, dass der gesamte HTML-Inhalt geladen ist, bevor das Script ausgeführt wird.
 
-```
+```html
 <body>
-   <!-- Inhalt der Seite -->
-   <script src="script.js"></script>
+  <!-- Inhalt der Seite -->
+  <script src="script.js"></script>
 </body>
 ```
 
-Mit dem async-Attribut
+**_Mit dem async-Attribut_**
 
 Wenn du das async-Attribut verwendest, wird das Script parallel zum Laden der Seite geladen und sobald es verfügbar ist, ausgeführt. Dies kann für bestimmte Scripts sinnvoll sein, die keine Abhängigkeit von anderen DOM-Elementen haben.
 
-`<script src="script.js" async></script>`
+```html
+<script src="script.js" async></script>
+```
 
-## Einbindung JavaScript - Konsole
+## Ausführung JavaScript - Browser Konsole
 
 1. Öffne die Entwicklertools in deinem Browser: In Chrome: Rechtsklick -> "Untersuchen" -> Tab "Konsole" oder <kbd>F12</kbd>
 
@@ -131,20 +131,9 @@ console.log("Hallo, Welt!");
 
 ---
 
-## Einbindung JavaScript - Standalone
+## Ausführung JavaScript - Serverseitiges JavaScript
 
-1. Erstelle eine Datei mit folgendem Inhalt und speicher sie als Test.js ab
-
-```javascript
-console.log("Hallo, Welt!");
-```
-
-2. Öffne sie mit einem Browser
-3. Öffne die Konsole wie zuvor gezeigt
-
-## Einbindung JavaScript - Serverseitiges JavaScript
-
-1. Erstelle eine Datei mit folgendem Inhalt und speicher sie als Test.js ab
+1. Erstelle eine Datei mit folgendem Inhalt und speichere sie als Test.js ab
 
 ```javascript
 console.log("Hallo, Welt!");
