@@ -78,6 +78,41 @@ alert("Hallo, Welt!");
 
 ---
 
+### Platzierung
+
+Im `<head>`-Bereich
+
+Du kannst das Script im `<head>`-Tag einbinden. Dies bedeutet, dass das Script ausgeführt wird, sobald der HTML-Header geladen ist, **bevor** der restliche Inhalt der Seite geladen wird.
+
+```
+<head>
+   <script src="script.js"></script>
+</head>
+```
+
+Hinweis: Wenn das Script direkt im `<head>`-Tag geladen wird, kann es zu Problemen führen, da das DOM noch nicht vollständig geladen ist. Um dieses Problem zu vermeiden, kannst du das defer-Attribut verwenden:
+
+`<script src="script.js" defer></script>`
+
+---
+
+Am Ende des `<body>`-Tags
+
+Eine gängige Praxis ist es, JavaScript kurz vor dem schließenden `</body>`-Tag einzubinden. Auf diese Weise wird sichergestellt, dass der gesamte HTML-Inhalt geladen ist, bevor das Script ausgeführt wird.
+
+```
+<body>
+   <!-- Inhalt der Seite -->
+   <script src="script.js"></script>
+</body>
+```
+
+Mit dem async-Attribut
+
+Wenn du das async-Attribut verwendest, wird das Script parallel zum Laden der Seite geladen und sobald es verfügbar ist, ausgeführt. Dies kann für bestimmte Scripts sinnvoll sein, die keine Abhängigkeit von anderen DOM-Elementen haben.
+
+`<script src="script.js" async></script>`
+
 ## Einbindung JavaScript - Konsole
 
 1. Öffne die Entwicklertools in deinem Browser: In Chrome: Rechtsklick -> "Untersuchen" -> Tab "Konsole" oder <kbd>F12</kbd>
