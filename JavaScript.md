@@ -22,17 +22,23 @@ ECMA International (früher: European Computer Manufacturers Association)
 
 ![ECMA](img/ecmascript.png)
 
-## Wo läuft JavaScript?
+## Auf welchen Plattformen läuft JavaScript? {.allowframebreaks}
 
 ![JavaScript Runtime](img/javascript_runtime.png)
 
-## Auf welchen Plattformen läuft JavaScript?
+**Webbrowser:** JavaScript wird von allen modernen Browsern unterstützt — einschließlich Chrome, Firefox, Safari, Edge und Opera — und somit auf Betriebssystemen wie Windows, macOS, Linux, iOS und Android.
 
-- Server Applikationen-> Node.js
-- Desktop Applikationen -> Electron
-- Mobile Applikationen -> React Native oder Ionic
+**Serverseitige Plattformen:** Mit Node.js kann JavaScript serverseitig ausgeführt werden. Node.js ist auf Windows, macOS, Linux und anderen Betriebssystemen verfügbar und ermöglicht die Entwicklung von skalierbaren Anwendungen.
 
-## Einbindung JavaScript - Eingebettetet im HTML
+**Desktop-Anwendungen:** Frameworks wie Electron erlauben es, plattformübergreifende Desktop-Anwendungen mit JavaScript, HTML und CSS zu erstellen. Diese Anwendungen laufen auf Windows, macOS und Linux.
+
+**Mobile Anwendungen:** Mit React Native, Ionic oder NativeScript können Entwickler native mobile Anwendungen für iOS und Android mit JavaScript erstellen.
+
+**Eingebettete Systeme und IoT-Geräte:** Plattformen wie Espruino und Johnny-Five und ermöglichen die Programmierung von Mikrocontrollern und eingebetteten Systemen mit JavaScript.
+
+**Datenbanken:** Datenbanken wie MongoDB und CouchDB, erlauben die Verwendung von JavaScript für Abfragen und serverseitige Skripte -> native Integration von JavaScript. Durch ORMs (Object Relational Mappers) ist aber auch die Integration von anderen Datenbanken möglich (MySQL, PostgreSQL, MariaDB, SQLite, Microsoft SQL Server)
+
+**Shell-Scripting und Automatisierung:** Tools wie Node.js können für Skripte und Automatisierungsaufgaben auf Betriebssystemebene verwendet werden.
 
 ```html
 <!DOCTYPE html>
