@@ -160,7 +160,7 @@ console.log("Hallo, Welt!");
 
 ---
 
-### Keyword in JavaScript
+### Variablen Keywords in JavaScript
 
 - var (veraltet, weil globaler scope(Geltungsbereich))
 - let (block-scoped -> Geltungsbereich ist eine näheste von geschweiften Klammern umschlossenen Syntaxen, z.B. if statement)
@@ -186,9 +186,12 @@ console.log("Hallo, Welt!");
 ### Zeichenketten/Strings Literals
 
 ```javascript
-var jsString = `Das ist ein String`; // Backticks
-var jsString = "Das ist ein String"; // einfache Anführungs-zeichen
-var jsString = "Das ist ein String"; // doppelte Anführungs-zeichen
+// Backticks
+var jsString = `Das ist ein String`;
+// einfache Anführungszeichen
+var jsString = "Das ist ein String";
+// doppelte Anführungs-zeichen
+var jsString = "Das ist ein String";
 
 // Vorteil von Backticks:
 var jsString = `half of 100 is ${100 / 2}`;
@@ -222,70 +225,81 @@ let y = 10;
 
 ## Operatoren
 
-| Operator | Bedeutung                              | Beispiel     |
-| -------- | -------------------------------------- | ------------ |
-| +, +=    | Addition                               | x+=3         |
-| -, -=    | Subtraktion                            | x=x-5        |
-| _, _=    | Multiplikation                         | a=b\*c       |
-| /, /=    | Division                               | z=e/5        |
-| %        | Modulus                                | m=5 % 3      |
-| ++, --   | Inkrement, Dekrement                   | x++ oder y-- |
-| <<, <<=  | Bitweise Linksschieben                 | x << 4       |
-| >>, >>=  | Bitweise Rechtsschieben                | y >> 5       |
-| >>>      | Bitweise Linksschieben mit Nullfüllung | a >>> b      |
-| &        | Bitweise UND                           | a & b        |
-| \|       | Bitweise ODER                          | a \| b       |
-| ^        | Bitweise Negieren                      | a ^ b        |
+### Arithmetische Operatoren
 
-## Elementare Datentypen
+| Operator | Beschreibung                | Beispiel         | Ergebnis |
+| -------- | --------------------------- | ---------------- | -------- |
+| `+`      | Addition                    | `5 + 3`          | `8`      |
+| `-`      | Subtraktion                 | `5 - 3`          | `2`      |
+| `*`      | Multiplikation              | `5 * 3`          | `15`     |
+| `/`      | Division                    | `5 / 2`          | `2.5`    |
+| `%`      | Modulo (Restwert)           | `5 % 2`          | `1`      |
+| `++`     | Inkrement (um 1 erhöhen)    | `let x = 5; x++` | `6`      |
+| `--`     | Dekrement (um 1 verringern) | `let x = 5; x--` | `4`      |
 
-- Dynamisch typisiert -> bedeutet nicht, das JS eine untypisierte Sprache ist. Vielmehr werden die Typen automatisiert bei der Wertzuweisung vergeben
+---
 
-- Typen:​
+### Vergleichsoperatoren
 
-  - Number: Zahlen​
-  - String: Zeichenketten​
-  - Boolean: logische Werte​
-  - Object: alles andere
+| Operator | Beschreibung                            | Beispiel    | Ergebnis |
+| -------- | --------------------------------------- | ----------- | -------- |
+| `==`     | Lose Gleichheit (Typumwandlung)         | `"5" == 5`  | `true`   |
+| `===`    | Strikte Gleichheit (ohne Typumwandlung) | `"5" === 5` | `false`  |
+| `!=`     | Lose Ungleichheit                       | `"5" != 5`  | `false`  |
+| `!==`    | Strikte Ungleichheit                    | `"5" !== 5` | `true`   |
+| `>`      | Größer als                              | `5 > 3`     | `true`   |
+| `<`      | Kleiner als                             | `5 < 3`     | `false`  |
+| `>=`     | Größer oder gleich                      | `5 >= 3`    | `true`   |
+| `<=`     | Kleiner oder gleich                     | `5 <= 5`    | `true`   |
 
-- Spezielle Zustände von Variablen​
-  - undefined bedeutet, dass einer Variable kein Wert zugewiesen wurde.
-  - null ist ein absichtlich zugewiesener Wert, der "kein Wert" oder "leerer Wert" bedeutet
+---
 
-## Automatische Typumwandlung
+### Logische Operatoren
 
-Wird ein Operator auf einen Wert eines unpassenden Typs angewandt, wandelt JS diesen Wert stillschweigend in den erforderlichen Wert um​ => implizierte Typumwandlung
+| Operator      | Beschreibung    | Beispiel                 | Ergebnis |
+| ------------- | --------------- | ------------------------ | -------- |
+| `&&`          | Logisches UND   | `true && false`          | `false`  |
+| &#124; &#124; | Logisches ODER  | true &#124; &#124; false | `true`   |
+| `!`           | Logisches NICHT | `!true`                  | `false`  |
 
-```javascript
-console.log(8 * null); // -> 0
-```
+---
 
-8 \* null ergibt 0, da null bei arithmetischen Operationen zu 0 konvertiert wird.
+### Zuweisungsoperatoren
 
-```javascript
-console.log("5" - 1); // -> 4
-```
+| Operator | Beschreibung                 | Beispiel | Ergebnis    |
+| -------- | ---------------------------- | -------- | ----------- |
+| `=`      | Zuweisung                    | `x = 5`  | `x` ist `5` |
+| `+=`     | Addition und Zuweisung       | `x += 5` | `x = x + 5` |
+| `-=`     | Subtraktion und Zuweisung    | `x -= 5` | `x = x - 5` |
+| `*=`     | Multiplikation und Zuweisung | `x *= 5` | `x = x * 5` |
+| `/=`     | Division und Zuweisung       | `x /= 5` | `x = x / 5` |
+| `%=`     | Modulo und Zuweisung         | `x %= 5` | `x = x % 5` |
 
-"5" - 1 ergibt 4, weil der String "5" bei Subtraktion zu einer Zahl konvertiert wird.
+---
 
-```javascript
-console.log("5" + 1); // -> 51
-```
+### Bitweise Operatoren
 
-"five" kann nicht in eine Zahl umgewandelt werden.
-Der +-Operator führt hier zur Zeichenkettenverknüpfung
+| Operator | Beschreibung                          | Beispiel  | Ergebnis |
+| -------- | ------------------------------------- | --------- | -------- |
+| `&`      | AND (bitweise)                        | `5 & 1`   | `1`      |
+| `\|`     | OR (bitweise)                         | `5 \| 1`  | `5`      |
+| `^`      | XOR (bitweise)                        | `5 ^ 1`   | `4`      |
+| `~`      | NOT (bitweise)                        | `~5`      | `-6`     |
+| `<<`     | Linksverschiebung                     | `5 << 1`  | `10`     |
+| `>>`     | Rechtsverschiebung                    | `5 >> 1`  | `2`      |
+| `>>>`    | Rechtsverschiebung mit Null auffüllen | `5 >>> 1` | `2`      |
 
-```javascript
-console.log("five" * 2); // -> NaN
-```
+---
 
-"five" kann nicht in eine Zahl umgewandelt werden
+### Sonstige Operatoren
 
-```javascript
-console.log(false == 0); // -> true
-```
-
-false wird in 0 umgewandelt und ist gleich 0 bei losem Vergleich (==).
+| Operator     | Beschreibung          | Beispiel               |
+| ------------ | --------------------- | ---------------------- |
+| `typeof`     | Datentyp eines Wertes | `typeof 42`            |
+| `instanceof` | Prüft Objekttyp       | `myCar instanceof Car` |
+| `new`        | Neue Instanz          | `new Date()`           |
+| `delete`     | Löscht Eigenschaft    | `delete obj.name`      |
+| `in`         | Prüft Eigenschaft     | `'name' in obj`        |
 
 ## Aufgabe
 
@@ -295,6 +309,214 @@ Erstelle eine HTML-Datei, die eine externe JavaScript-Datei einbindet. Das JavaS
 1. Schreibe eine Nachricht "Hallo, Welt!" in die Konsole.
 2. Definiere zwei Variablen, a und b, mit den Werten 10 und 20. Berechne die Summe dieser beiden Variablen und gib das Ergebnis in der Konsole aus.
 3. Erstelle eine Zeichenkette, die den Text "Das Ergebnis von 10 + 20 ist: " enthält, und füge das Ergebnis der Berechnung in diese Zeichenkette ein. Gib diese Zeichenkette ebenfalls in der Konsole aus.
+
+## Dynamische Typisierung {.allowframebreaks}
+
+Dynamisch typisiert -> Variablen haben keinen festen Typ. Die Typen werden automatisiert bei der Wertzuweisung vergeben (während der Laufzeit)
+
+**Elementare Datentypen**
+
+**String**: Eine Folge von Zeichen, die in Anführungszeichen eingeschlossen sind.  
+Beispiel: `let name = "Thomas";`
+
+**Number**: Repräsentiert sowohl Ganzzahlen als auch Gleitkommazahlen.  
+Beispiel: `let amount = 34`
+
+**BigInt**: Erlaubt es, ganze Zahlen zu repräsentieren, die größer als `Number.MAX_SAFE_INTEGER` sind.  
+Beispiel: 1234567890123456789012345678901234567890n
+
+**Boolean**: Repräsentiert logische Werte, entweder true oder false.  
+Beispiel: `let open = true`
+
+**Undefined**: Ein Wert, der angibt, dass eine Variable deklariert wurde, aber keinen Wert zugewiesen bekommen hat.  
+Beispiel: `let x; // x ist undefined`
+
+**Null**: Ein spezieller Wert, der angibt, dass eine Variable explizit keinen Wert hat.  
+Beispiel: `let y = null;`
+
+**Symbol**: Ein einzigartiger und unveränderlicher Wert, der häufig als Schlüssel für Objekte verwendet wird.  
+Beispiel: `let sym = Symbol("einzigartig");`
+
+**Komplexe Datentypen**
+
+siehe Arbeiten mit Datenstrukturen
+
+## Loosely Typing {.allowframebreaks}
+
+Typumwandlung durch Neuzuweisung
+
+```javascript
+let apiKey = 1234; //number
+apiKey = "hrkew"; // string
+```
+
+## Weakly Typing
+
+Dadurch das JavaScript weakly typed ist, kann es zu impliziten (automatischen) Typumwandlungen kommen.
+
+**Wann tritt implizite Typumwandlung auf?**
+
+### 1. Bei der Verwendung von arithmetischen Operatoren:
+
+Wenn Sie Operatoren wie +, -, \*, / verwenden und die Operanden unterschiedliche Typen haben.
+
+**-, \*, / Operatoren**
+
+Diese arithmetischen Operatoren (-, \*, /) erwarten Zahlen als Operanden. Wenn einer oder beide Operanden keine Zahl sind, versucht JavaScript, sie in Zahlen umzuwandeln.
+
+```javascript
+console.log("5" - 1); // -> 4
+```
+
+"5" - 1 ergibt 4, weil der String "5" bei Subtraktion zu einer Zahl konvertiert wird.
+
+---
+
+**\+ Operator**
+
+String-Verkettung: Wenn einer der Operanden ein String ist, wird der andere Operand in einen String umgewandelt, und die Operanden werden verkettet.
+Beispiel: "5" + 3 → "53" (Zahl 3 wird zu String "3").  
+Addition: Wenn beide Operanden Zahlen sind (oder zu Zahlen umgewandelt werden können), führt + eine Addition durch.
+Beispiel: 5 + 3 → 8.
+
+**Fazit**
+
+Der +-Operator entscheidet also abhängig von den Operanden, ob er Zahlen addiert oder Strings verketten soll.
+
+```javascript
+console.log("5" + 1); // -> 51
+```
+
+Der +-Operator führt hier zur Zeichenkettenverknüpfung
+
+---
+
+### 2. Bei Vergleichsoperatoren:
+
+**<, >, <=, >=**
+
+Bei den Vergleichsoperatoren werden die Operanden in Zahlen umgewandelt, falls sie keine Zahlen sind.  
+Wenn ein Operand nicht in eine Zahl umgewandelt werden kann (z.B. ein nicht-numerischer String), wird das Ergebnis false, weil NaN in Vergleichen nicht als gültig betrachtet wird.
+"five" kann nicht in eine Zahl umgewandelt werden
+
+```javascript
+console.log("5" < 10);
+// Ergebnis: true (String "5" wird zu 5)
+console.log("abc" > 3);
+// Ergebnis: false ("abc" wird zu NaN)
+```
+
+---
+
+**Gleichheitsoperator (==, !=):**  
+Beim losen Vergleich (==, !=) werden die Typen implizit umgewandelt, um sie vergleichbar zu machen. Wenn ein Operand ein String ist und der andere eine Zahl, wird der String in eine Zahl umgewandelt.
+null und undefined sind in losem Vergleich gleich, aber nicht mit anderen Werten vergleichbar.
+
+```javascript
+console.log("5" == 5);
+// Ergebnis: true (String "5" wird zu 5)
+console.log(null == undefined);
+// Ergebnis: true
+```
+
+---
+
+### 3. In booleschen Kontexten:
+
+Wenn Werte in Bedingungen (if, while, for) oder logischen Operationen (&&, ||, !) verwendet werden. Hier werden nicht-boolsche Typen in booleans umgewandelt.
+
+## Übersicht der Typkonvertierungen in verschiedenen Datentypen
+
+| Original Value | Converted to Number | Converted to String | Converted to Boolean |
+| -------------- | ------------------- | ------------------- | -------------------- |
+| false          | 0                   | "false"             | false                |
+| true           | 1                   | "true"              | true                 |
+| 0              | 0                   | "0"                 | false                |
+| 1              | 1                   | "1"                 | true                 |
+| "0"            | 0                   | "0"                 | true                 |
+| "000"          | 0                   | "000"               | true                 |
+| "1"            | 1                   | "1"                 | true                 |
+| NaN            | NaN                 | "NaN"               | false                |
+| Infinity       | Infinity            | "Infinity"          | true                 |
+| -Infinity      | -Infinity           | "-Infinity"         | true                 |
+| ""             | 0                   | ""                  | false                |
+
+---
+
+| Original Value   | Converted to Number | Converted to String | Converted to Boolean |
+| ---------------- | ------------------- | ------------------- | -------------------- |
+| "20"             | 20                  | "20"                | true                 |
+| "twenty"         | NaN                 | "twenty"            | true                 |
+| []               | 0                   | ""                  | true                 |
+| [20]             | 20                  | "20"                | true                 |
+| [10,20]          | NaN                 | "10,20"             | true                 |
+| ["twenty"]       | NaN                 | "twenty"            | true                 |
+| ["ten","twenty"] | NaN                 | "ten,twenty"        | true                 |
+| function(){}     | NaN                 | "function(){}"      | true                 |
+| {}               | NaN                 | "[Object Object]"   | true                 |
+| null             | 0                   | "null"              | false                |
+| undefined        | NaN                 | "undefined"         | false                |
+
+---
+
+**Faustregel truthy und falsy Werte**
+
+### Falsy Werte
+
+- `false`
+- `0` (Null)
+- `''` (Leerer String)
+- `null`
+- `undefined`
+- `NaN` (Not a Number)
+
+### Truthy Werte
+
+- Alles, was nicht falsy ist
+- Beispiele:
+  - `true`
+  - Jede Zahl außer 0 (auch negative Zahlen)
+  - Jeder nicht-leere String (auch "false")
+  - `{}` (Leeres Objekt)
+  - `[]` (Leeres Array)
+
+## Explizite Typumwandlung
+
+```javascript
+let input = "5";
+
+// Ohne Typumwandlung: JavaScript würde automatisch den String in eine Zahl konvertieren
+console.log(input + 2); // "52" (automatische Typumwandlung, String-Verkettung)
+
+// Mit expliziter Typumwandlung
+let numberInput = Number(input);
+console.log(numberInput + 2); // 7 (explizite Typumwandlung in Zahl)
+```
+
+Ohne die explizite Typumwandlung wird input + 2 als String-Verkettung behandelt, und das Ergebnis ist "52".
+Mit der expliziten Typumwandlung (Number(input)) stellst du sicher, dass der Wert in eine Zahl umgewandelt wird, und das Ergebnis der Addition ist 7.
+
+## Strikte Vergleiche
+
+```javascript
+let a = "5";
+let b = 5;
+
+// Lose Vergleich (==) lässt automatische Typumwandlung zu
+console.log(a == b); // true (JavaScript wandelt "5" in 5 um und vergleicht die Werte)
+
+// Strikter Vergleich (===) verhindert automatische Typumwandlung
+console.log(a === b); // false (der String "5" ist nicht gleich der Zahl 5)
+```
+
+Beim losen Vergleich (==) wird der String "5" automatisch in die Zahl 5 umgewandelt, und daher ergibt der Vergleich true.
+Beim strikten Vergleich (===) wird sowohl der Typ als auch der Wert verglichen. Da a ein String ist und b eine Zahl, ergibt der Vergleich false.
+
+## Quiztime
+
+Bearbeiten Sie das Quiz:
+
+[https://forms.gle/mLG8nk69KvF3WJjy7](https://forms.gle/mLG8nk69KvF3WJjy7)
 
 # Arbeiten mit Datenstrukturen
 
@@ -397,19 +619,41 @@ console.log(more_parts);
 
 Erstelle 3 verschiedene JavaScript-Objekte, die jeweils Daten einer Person (Name, Alter, Beruf) enthalten. Speichere diese Personendaten in einem Array, das mehrere Personen enthält. Verwende die map() Methode, um eine Liste der Berufe aller Personen zu erstellen. Anschließend fügst du mit dem Spread-Operator eine neue Person zu diesem Array hinzu und gibst das aktualisierte Array in der Konsole aus. Führe die Datei mit serverseitigem JavaScript aus.
 
-# Logik und Kontrollfluss
+# Kontrollstrukturen
 
-## Vergleichsoperatoren
+## If – else:
 
-JavaScript enthält folgende logische Vergleichsoperatoren​
+- If-Ausdruck vom Typ Boolean
+- Der `else`-Zweig ist optional
 
-- == // Vergleich auf Wert-Gleichheit​
-- != // Vergleich auf Wert-Ungleichheit​
-- === // Vergleich auf Wert- und Typ-Gleichheit​
-- !== // Vergleich auf Wert- und Typ-Ungleichheit​
-- && // Logisches UND​
-- || // Logisches ODER​
-- ! // Logisches Nein (not)
+```javascript
+var test = true;
+
+if (test) {
+  console.log("True");
+} else {
+  console.log("False");
+}
+// Output -> True
+```
+
+---
+
+```javascript
+// Wahrheitsgehalt ausgewertet durch Vergleichsoperator
+var number = Number(prompt("Pick a number"));
+if (number < 10) {
+  console.log("under 10");
+} else if (number < 100) {
+  console.log("under 100");
+} else {
+  console.log("larger than 100");
+}
+
+// Einzeiliges If, bei nur einer Anweisung
+if (1 + 1 == 2) console.log("It's true");
+// -> It's true
+```
 
 ## Short Circuit Evaluation
 
@@ -454,75 +698,6 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
    const result5 = (i && j) || k;
    ```
 
-## Falsy und Truthy in JavaScript
-
-### Falsy Werte
-
-- `false`
-- `0` (Null)
-- `''` (Leerer String)
-- `null`
-- `undefined`
-- `NaN` (Not a Number)
-
-### Truthy Werte
-
-- Alles, was nicht falsy ist
-- Beispiele:
-  - `true`
-  - Jede Zahl außer 0 (auch negative Zahlen)
-  - Jeder nicht-leere String (auch "false")
-  - `{}` (Leeres Objekt)
-  - `[]` (Leeres Array)
-
----
-
-### Anwendung
-
-- In Bedingungen: `if (value) { ... }`
-- Mit logischen Operatoren: `value || defaultValue`
-- Ternärer Operator: `value ? trueResult : falseResult`
-
-### Vorsicht
-
-- Loose equality (`==`) vs. Strict equality (`===`)
-- Explizite Typprüfung für präzise Logik
-
-# Kontrollstrukturen
-
-## If – else:
-
-- If-Ausdruck vom Typ Boolean
-- Der `else`-Zweig ist optional
-
-```javascript
-var test = true;
-
-if (test) {
-  console.log("True");
-} else {
-  console.log("False");
-}
-// Output -> True
-```
-
----
-
-```javascript
-// Wahrheitsgehalt ausgewertet durch Vergleichsoperator
-var number = Number(prompt("Pick a number"));
-if (number < 10) {
-  console.log("under 10");
-} else if (number < 100) {
-  console.log("under 100");
-} else {
-  console.log("larger than 100");
-}
-
-// Einzeiliges If, bei nur einer Anweisung
-if (1 + 1 == 2) console.log("It's true");
-// -> It's true
-```
 
 ## switch – else – default:{.allowframebreaks}
 
@@ -928,3 +1103,7 @@ console.log("Nächster Schritt");
 - Der Fokus lag auf einem Überblick ohne Anspruch auf Vollständigkeit.
 - Es gibt viele weiterführende Details, Themen und Konzepte, die hier nicht behandelt wurden.
 - Dennoch bietet dieses Fundament eine solide Basis für das Verständnis von React und allgemeiner Frontend-Entwicklung.
+
+```
+
+```
