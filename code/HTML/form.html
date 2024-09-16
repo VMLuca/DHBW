@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Example</title>
+  </head>
+  <body>
+    <form action="results.html" method="get">
+      <div>
+        <label for="name">Name</label>
+        <input
+          type="text"
+          name="name"
+          id="name"
+          required
+          maxlength="3"
+          minlength="2"
+        />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" />
+      </div>
+
+      <div>
+        <label for="eyeColor">Eye Color</label>
+        <select name="eyeColor" id="eyeColor" size="1">
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+          <option value="Green">Green</option>
+          <option label="Red" value="Red"></option>
+        </select>
+      </div>
+
+      <button type="reset">Reset</button>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
