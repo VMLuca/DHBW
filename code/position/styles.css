@@ -12,12 +12,15 @@ body {
 .one {
     background-color: hsl(158, 78%, 42%);
     height: 100px;
+    /* Beispiel für sticky */
+    /* position: sticky;
+    top:0px; */
 }
 
 .two {
     background-color: hsl(21, 100%, 60%);
     height: 100px;
-    position: absolute;
+    position: static;
     top: 20px;
 
 }
