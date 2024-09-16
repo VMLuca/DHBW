@@ -5,11 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
+    <style>
+      #div-1 {
+        background-color: red;
+        display: block;
+      }
+
+      #span-1 {
+        background-color: cyan;
+        display: inline-block;
+        height: 500px;
+      }
+
+      #span-2 {
+        background-color: purple;
+        display: inline;
+        height: 200px;
+      }
+
+      #div-2 {
+        background-color: green;
+      }
+
+      #img {
+        width: 50px;
+        height: 50px;
+      }
+    </style>
   </head>
   <body>
-    <div class="one">One</div>
-    <span class="two">Two</span>
-    <span class="three">Three</span>
-    <div class="four">Four</div>
+    <div id="div-1">This is a div</div>
+    <span id="span-1">This is a span</span>
+    <img id="img" src="image.png" />
+    <span id="span-2">This is another span</span>
+    <div id="div-2">This is another div</div>
   </body>
 </html>
