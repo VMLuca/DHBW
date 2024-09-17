@@ -539,42 +539,50 @@ Bearbeiten Sie das Quiz:
 
 ## Arrays
 
-- Ein Array wird mit dem Konstruktor new Array() oder dem Literal [ ] angelegt​
+Ein Array wird mit dem Konstruktor new Array() oder dem Literal  
+[ ] angelegt​  
+Der Zugriff kann indexbasiert passieren:
 
-- Ein existierendes Array kann über vordefinierte Methoden verändert werden​
+```javascript
+const arr = new Array(1, 2, 3);
+console.log(arr[0]); // 1
+arr[0] = 3;
+console.log(arr[0]); // 3
+```
 
-  - push(e) //Fügt ein Element am Ende ein und gibt die neue Länge zurück.​
+Ein existierendes Array kann über vordefinierte Methoden verändert werden​:  
+**`push()`**  
+Fügt ein oder mehrere Elemente am Ende des Arrays hinzu.
 
-  - pop() // Entfernt das Element am Ende und gibt es zurück.​
-
-  - reverse() // Dreht die Reihenfolge der Elemente im Array um.​
-
-  - shift() // Entfernt das Element am Anfang und gibt es zurück.​
-
-  - sort() // Sortiert das Array und gibt das neue Array zurück.​
-
-  - splice(start, entfernen, neu…) // Entfernt Elemente und fügt neue ein.​
+```javascript
+let arr = [1, 2, 3];
+arr.push(4); // [1, 2, 3, 4]
+```
 
 ---
 
-- unshift(neu…) // Fügt Elemente am Anfang mein und gibt die neue Länge zurück.
+**`pop()`**  
+Entfernt das letzte Element aus dem Array und gibt es zurück.
 
-- slice(start, ende) // Extrahiert den Teil eines Arrays von start bis ende.​
+```javascript
+let arr = [1, 2, 3];
+arr.pop(); // [1, 2] (Rückgabewert: 3)
+```
 
-- concat(array) // Verbindet Arrays zu einem neuen Array.​
+**`slice()`**  
+Gibt einen Teil des Arrays zurück, ohne das ursprüngliche Array zu verändern.
 
-- indexOf(s) // Index der ersten Fundstelle der Zeichen s oder -1, falls nichts gefunden wurde​
-
-- forEach(callback, this) // Ruft eine Funktion callback für jedes Element des Arrays auf. Der Parameter this kann benutzt werden, um der Funktion den Wert für this vorzugeben. ​
-
-- map(callback, this) // Gibt die Elemente zurück, die die Rückruffunktion für jedes Element zurückgibt.
+```javascript
+let arr = [1, 2, 3, 4];
+let newArr = arr.slice(1, 3); // newArr = [2, 3]
+```
 
 ## Map
 
 Die map-Methode in JavaScript ist eine nützliche Array-Methode, die ein neues Array erstellt, indem eine Funktion auf jedes Element des ursprünglichen Arrays angewendet wird. Diese Methode verändert das ursprüngliche Array nicht.
 
 ```javascript
-let newArray = array.map(function (element, index, array) {
+let newArray = array.map(function (element, index) {
   // Rückgabewert für das neue Array
 });
 ```
@@ -588,12 +596,12 @@ let newArray = array.map(function (element, index, array) {
 ```javascript
 // Ursprüngliches Array
 let numbers = [1, 2, 3, 4, 5];
-// Erstelle ein neues Array, das die Quadrate der ursprünglichen Zahlen enthält
+// Erstelle ein neues Array, das die Quadrate
+//der ursprünglichen Zahlen enthält
 let squares = numbers.map(function (number) {
   return number * number;
 });
-// Ausgabe: [1, 4, 9, 16, 25]
-console.log(squares);
+console.log(squares); //  [1, 4, 9, 16, 25]
 ```
 
 1. Wir haben ein Array numbers mit den Werten [1, 2, 3, 4, 5].
@@ -612,7 +620,7 @@ var parts = ["shoulders", "knees"];
 var more_parts = ["head", ...parts, "foot", "toes"];
 
 console.log(more_parts);
-// Output -> ['head', 'shoulders', 'knees', 'foot', 'toes']
+// ['head', 'shoulders', 'knees', 'foot', 'toes']
 ```
 
 ## Aufgabe
@@ -697,7 +705,6 @@ result ist 4, weil a falsch ist und || den zweiten Operanden zurückgibt
    const k = 15;
    const result5 = (i && j) || k;
    ```
-
 
 ## switch – else – default:{.allowframebreaks}
 
