@@ -755,7 +755,7 @@ while (i < 10) {
 
 ---
 
-### do
+### do while
 
 **Syntax:**
 
@@ -809,7 +809,7 @@ for (let i = 0; i < 5; i++) {
 Eine Schleife kann durch `break` auch vorzeitig beendet werden.
 
 ```javascript
-for (var i = 0; ; i++) {
+for (var i = 0; i < 10; i++) {
   if (i > 2) {
     break;
   }
@@ -1076,6 +1076,8 @@ console.log("Test") // Dieser log erscheint vor der Textausgabe in h1
 - Das Dateisytem braucht eine gewisse Zeit um die Datei bereitzustellen
 - Deshalb "merkt" sich die Ausführungsengine die Stelle und springt aus der Funktion raus in die weitere Abarbeitung
 - Wenn das Dateisystem fertig ist, springt die Abarbeitung wieder an die "gemerkte" Stelle und das Ergebnis kann prozessiert werden
+
+---
 
 ```javascript
 const fs = require("fs/promises");
