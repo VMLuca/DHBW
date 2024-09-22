@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formular-Addition</title>
+  </head>
+  <body>
+    <h1>Kleine Rechen-App</h1>
+
+    <p>Gib zwei Zahlen ein, um sie zu addieren:</p>
+    <form id="calcForm">
+      <label for="num1">Zahl 1:</label>
+      <input type="text" id="num1" />
+      <br /><br />
+      <label for="num2">Zahl 2:</label>
+      <input type="text" id="num2" />
+      <br /><br />
+      <button type="button" id="addButton">Addieren</button>
+    </form>
+
+    <h3>Ergebnis:</h3>
+    <div id="result"></div>
+
+    <script>
+      document
+        .getElementById("addButton")
+        .addEventListener("click", function () {
+          // Holen der Werte aus den Eingabefeldern
+          const num1 = document.getElementById("num1").value;
+          const num2 = document.getElementById("num2").value;
+
+          // Versuchen, sie direkt zu addieren (ohne Typkonvertierung)
+          const resultWithoutConversion = num1 + num2; // String-Konkatenation!
+
+          // Nun mit expliziter Typkonvertierung zu Zahlen
+          const resultWithConversion = Number(num1) + Number(num2);
+
+          if(!num1 || !num2 || isNaN(Number(num1)) || isNaN(Number(num2))) {
+            alert("Bitte gib zwei Zahlen ein!");
+            return;
+          }
+
+          // Ausgabe beider Ergebnisse
+          document.getElementById("result").innerHTML = `
+                <p><strong>Ohne Typkonvertierung (String-Konkatenation):</strong> "${num1}" + "${num2}" = "${resultWithoutConversion}"</p>
+                <p><strong>Mit expliziter Typkonvertierung (korrekte Addition):</strong> ${num1} + ${num2} = ${resultWithConversion}</p>
+            `;
+        });
+    </script>
+  </body>
+</html>
