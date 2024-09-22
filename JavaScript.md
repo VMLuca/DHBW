@@ -408,9 +408,14 @@ console.log("abc" > 3);
 
 ---
 
-**Gleichheitsoperator (==, !=):**  
-Beim losen Vergleich (==, !=) werden die Typen implizit umgewandelt, um sie vergleichbar zu machen. Wenn ein Operand ein String ist und der andere eine Zahl, wird der String in eine Zahl umgewandelt.
-null und undefined sind in losem Vergleich gleich, aber nicht mit anderen Werten vergleichbar.
+**Gleichheitsoperator (==, !=):**
+
+1. Wenn ein Operand null und der andere undefined ist:
+   Diese beiden Typen werden gleichgesetzt.
+2. Wenn einer der Operanden eine Zahl und der andere ein String ist:
+   Der String wird in eine Zahl umgewandelt, und dann wird der Vergleich durchgeführt.
+3. Wenn einer der Operanden ein Boolean-Wert ist:
+   Der Boolean-Wert wird in 1 (für true) oder 0 (für false) umgewandelt.
 
 ```javascript
 console.log("5" == 5);
@@ -484,13 +489,15 @@ Wenn Werte in Bedingungen (if, while, for) oder logischen Operationen (&&, ||, !
 
 ```javascript
 let input = "5";
-
-// Ohne Typumwandlung: JavaScript würde automatisch den String in eine Zahl konvertieren
-console.log(input + 2); // "52" (automatische Typumwandlung, String-Verkettung)
+// Ohne Typumwandlung: JavaScript würde 
+//automatisch den String in eine Zahl konvertieren
+console.log(input + 2); 
+// "52" (automatische Typumwandlung, String-Verkettung)
 
 // Mit expliziter Typumwandlung
 let numberInput = Number(input);
-console.log(numberInput + 2); // 7 (explizite Typumwandlung in Zahl)
+console.log(numberInput + 2); 
+// 7 (explizite Typumwandlung in Zahl)
 ```
 
 Ohne die explizite Typumwandlung wird input + 2 als String-Verkettung behandelt, und das Ergebnis ist "52".
@@ -503,10 +510,12 @@ let a = "5";
 let b = 5;
 
 // Lose Vergleich (==) lässt automatische Typumwandlung zu
-console.log(a == b); // true (JavaScript wandelt "5" in 5 um und vergleicht die Werte)
+console.log(a == b); 
+// true (JavaScript wandelt "5" in 5 um und vergleicht die Werte)
 
 // Strikter Vergleich (===) verhindert automatische Typumwandlung
-console.log(a === b); // false (der String "5" ist nicht gleich der Zahl 5)
+console.log(a === b); 
+// false (der String "5" ist nicht gleich der Zahl 5)
 ```
 
 Beim losen Vergleich (==) wird der String "5" automatisch in die Zahl 5 umgewandelt, und daher ergibt der Vergleich true.
