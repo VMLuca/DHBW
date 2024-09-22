@@ -489,14 +489,14 @@ Wenn Werte in Bedingungen (if, while, for) oder logischen Operationen (&&, ||, !
 
 ```javascript
 let input = "5";
-// Ohne Typumwandlung: JavaScript würde 
+// Ohne Typumwandlung: JavaScript würde
 //automatisch den String in eine Zahl konvertieren
-console.log(input + 2); 
+console.log(input + 2);
 // "52" (automatische Typumwandlung, String-Verkettung)
 
 // Mit expliziter Typumwandlung
 let numberInput = Number(input);
-console.log(numberInput + 2); 
+console.log(numberInput + 2);
 // 7 (explizite Typumwandlung in Zahl)
 ```
 
@@ -510,16 +510,18 @@ let a = "5";
 let b = 5;
 
 // Lose Vergleich (==) lässt automatische Typumwandlung zu
-console.log(a == b); 
-// true (JavaScript wandelt "5" in 5 um und vergleicht die Werte)
+console.log(a == b);
+// true (JavaScript wandelt "5" in 5 um
+//und vergleicht die Werte)
 
-// Strikter Vergleich (===) verhindert automatische Typumwandlung
-console.log(a === b); 
+// Strikter Vergleich (===) verhindert
+//automatische Typumwandlung
+console.log(a === b);
 // false (der String "5" ist nicht gleich der Zahl 5)
 ```
 
-Beim losen Vergleich (==) wird der String "5" automatisch in die Zahl 5 umgewandelt, und daher ergibt der Vergleich true.
-Beim strikten Vergleich (===) wird sowohl der Typ als auch der Wert verglichen. Da a ein String ist und b eine Zahl, ergibt der Vergleich false.
+Beim strikten Vergleich (===) wird sowohl der Typ als auch der Wert verglichen.
+Da a ein String ist und b eine Zahl, ergibt der Vergleich false.
 
 ## Quiztime
 
@@ -575,7 +577,8 @@ Entfernt das letzte Element aus dem Array und gibt es zurück.
 
 ```javascript
 let arr = [1, 2, 3];
-arr.pop(); // [1, 2] (Rückgabewert: 3)
+let deletedItem = arr.pop();
+// [1, 2] (Rückgabewert: 3)
 ```
 
 **`slice()`**  
@@ -933,24 +936,11 @@ function performOperation(a, b, operation) {
   return operation(a, b);
 }
 
-let result = performOperation(5, 3, add);
+let result = performOperation(5, 3, (x, y) => x + y);
 console.log(result); // Output: 8
 ```
 
 - Funktionen können als Argumente an andere Funktionen übergeben werden.
-
-### Funktionen, die andere Funktionen zurückgeben
-
-```javascript
-function multiplier(factor) {
-  return (x) => x * factor;
-}
-
-let doubler = multiplier(2);
-console.log(doubler(5)); // Output: 10
-```
-
-- Funktionen können andere Funktionen zurückgeben, um benutzerdefinierte Logik zu erstellen.
 
 ## ES Modules{.allowframebreaks}
 
