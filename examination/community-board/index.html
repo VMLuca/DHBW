@@ -35,7 +35,16 @@
       </div>
       <img src="./community.avif" alt="Vercel Logo" class="image" />
     </div>
-    <div id="thread-list"></div>
+    <div id="thread-list">
+      <div class="threadHeader">
+        <button id="create-thread-button">Beitrag erstellen</button>
+        <select id="sort-select">
+          <option value="title">Sortieren nach Titel</option>
+          <option value="date">Sortieren nach Datum</option>
+        </select>
+      </div>
+      <div id="threads-container"></div>
+    </div>
     <footer>
       <div class="footer">
         <div class="copyright">

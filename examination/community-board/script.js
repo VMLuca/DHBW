@@ -22,17 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   
     const renderThreads = () => {
-      const threadList = document.getElementById("thread-list");
-      threadList.innerHTML = `
-        <div class="threadHeader">
-          <button id="create-thread-button">Beitrag erstellen</button>
-          <select id="sort-select">
-            <option value="title">Sortieren nach Title</option>
-            <option value="date">Sortieren nach Datum</option>
-          </select>
-        </div>
-        <div id="threads-container"></div>
-      `;
+     
   
       const threadsContainer = document.getElementById("threads-container");
       threadsContainer.innerHTML = threads.map(thread => `
