@@ -11,8 +11,15 @@ body {
   background: white;
 }
 
+.w-100{
+  width: 100%;
+}
+
 .instructions li {
   border: 1px solid #8bc34a;
+  /* border-width: 1px;
+  border-color: #8bc34a;
+  border-style: solid;  */
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;

@@ -8,11 +8,11 @@
   <body>
     <form action="results.html" method="get">
       <div>
-        <label for="name">Name</label>
+        <label for="username">Name</label>
         <input
+          name="username"
           type="text"
-          name="name"
-          id="name"
+          id="username"
           required
           maxlength="3"
           minlength="2"
@@ -20,13 +20,13 @@
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" />
+        <input type="email" name="email" id="email" value="test@test.de" />
       </div>
 
       <div>
         <label for="eyeColor">Eye Color</label>
-        <select name="eyeColor" id="eyeColor" size="1">
-          <option value="Green">Green</option>
+        <select name="eyeColor" id="eyeColor" size="5" multiple>
+          <option label="Green" name="eyeColor1"></option>
           <option label="Red" value="Red"></option>
           <option value="Green">Green</option>
           <option label="Red" value="Red"></option>
