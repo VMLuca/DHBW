@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Community board</title>
+    <title>Community Board</title>
     <link rel="stylesheet" href="./header.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,7 +16,7 @@
     <header>
       <div class="header">
         <div class="logo">
-          <img src="./github.svg" alt="Logo" class="logoImage" />
+          <img src="./github.svg" alt="Github Logo" class="logoImage" />
           <h1 class="siteName">Github</h1>
         </div>
         <nav class="nav">
@@ -28,23 +28,22 @@
         </nav>
       </div>
     </header>
-    <div class="wrapper">
-      <div class="text">
-        <h5 style="margin-bottom: 1px">Willkommen in der</h5>
-        <h1 style="margin-top: 1px">Community</h1>
-      </div>
-      <img src="./community.avif" alt="Vercel Logo" class="image" />
-    </div>
-    <div id="thread-list">
-      <div class="threadHeader">
-        <button id="create-thread-button">Beitrag erstellen</button>
-        <select id="sort-select">
-          <option value="title">Sortieren nach Titel</option>
-          <option value="date">Sortieren nach Datum</option>
-        </select>
-      </div>
-      <div id="threads-container"></div>
-    </div>
+    <main>
+      <section class="wrapper">
+        <h5 class="text">Willkommen in der Community</h5>
+        <img src="./community.avif" alt="Community Bild" class="image" />
+      </section>
+      <section id="thread-list">
+        <div class="threadHeader">
+          <button id="create-thread-button">Beitrag erstellen</button>
+          <select id="sort-select">
+            <option value="title">Sortieren nach Titel</option>
+            <option value="date">Sortieren nach Datum</option>
+          </select>
+        </div>
+        <div id="threads-container"></div>
+      </section>
+    </main>
     <footer>
       <div class="footer">
         <div class="copyright">
